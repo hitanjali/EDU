@@ -3,3 +3,7 @@ http://onlineshouter.com/use-esp8266-wifi-modes-station-access-point/
 
 Node MCU examples and basic understanding
 https://www.teachmemicro.com/nodemcu-mqtt-tutorial/
+
+Node MCU ESP8266 WiFi Library
+
+https://nodemcu.readthedocs.io/en/master/modules/wifi/
