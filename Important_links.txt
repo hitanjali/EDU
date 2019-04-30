@@ -1,0 +1,2 @@
+ESP8266 as station mode and Soft-AP mode : Useful for Mesh study
+http://onlineshouter.com/use-esp8266-wifi-modes-station-access-point/
