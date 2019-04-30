@@ -1,0 +1,15 @@
+VIA related : 
+
+https://www.allaboutcircuits.com/technical-articles/which-via-should-i-choose-a-guide-to-vias-in-pcb-design/ 
+
+Placement related : 
+
+https://resources.altium.com/pcb-design-blog/top-pcb-design-guidelines-every-pcb-designer-needs-to-know
+
+VIA vs longer traces : 
+
+https://resources.altium.com/pcb-design-blog/when-to-prefer-a-longer-trace-over-an-additional-via
+
+Lion ckts PCB desgin specs : 
+
+https://www.lioncircuits.com/PCB-Design-Guidelines.html
