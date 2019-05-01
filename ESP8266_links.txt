@@ -11,3 +11,7 @@ https://nodemcu.readthedocs.io/en/master/modules/wifi/
 ESP to ESP over UDP : 
 
 https://circuits4you.com/2018/01/01/esp-to-esp-communication/
+
+ESP to ESP withough UdP or ayny other channel : 
+
+https://blog.zairza.in/esp8266-to-esp8266-communication-without-a-router-fe9642b93292https://blog.zairza.in/esp8266-to-esp8266-communication-without-a-router-fe9642b93292
