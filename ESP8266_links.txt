@@ -15,3 +15,15 @@ https://circuits4you.com/2018/01/01/esp-to-esp-communication/
 ESP to ESP withough UdP or ayny other channel : 
 
 https://blog.zairza.in/esp8266-to-esp8266-communication-without-a-router-fe9642b93292https://blog.zairza.in/esp8266-to-esp8266-communication-without-a-router-fe9642b93292
+
+
+
+
+Git Hub reference : 
+
+
+https://github.com/esp8266/Arduino/tree/master/libraries
+
+https://github.com/esp8266/Arduino/tree/master/libraries/ESP8266WiFi/examples
+
+
