@@ -37,4 +37,8 @@ https://github.com/espressif/arduino-esp32/tree/master/libraries/WiFi/examples
 
 
 
+ESP8266 Low power modes : 
+
+https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=4&cad=rja&uact=8&ved=2ahUKEwjW7LrxuqziAhUUaI8KHU6mADMQFjADegQIBBAC&url=https%3A%2F%2Fwww.espressif.com%2Fsites%2Fdefault%2Ffiles%2F9b-esp8266-low_power_solutions_en_0.pdf&usg=AOvVaw3vb5sQmklyMUfmrgOfk_Xn
+
 
