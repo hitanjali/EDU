@@ -1,1 +1,33 @@
-Although we have ground plane on PCB the connection to the gnd pins should not be a bottelneck
+PCB : 
+Although we have ground plane on PCB the connection to the gnd pins of ICs should not be a bottelneck. In that case we 
+can route the VCC , GND first followed by critical pins like analog , differential and then other pins. 
+
+https://resources.altium.com/pcb-design-blog/top-pcb-design-guidelines-every-pcb-designer-needs-to-know
+
+
+Programming the ATMEGA chips 
+
+1. The chips can be programmed with the help of another arduino board like UNO in the ISP mode. 
+   1a. Load the boot loader with the help of ICSP header and another UNO board. 
+   
+   https://www.arduino.cc/en/Tutorial/ArduinoISP#toc7
+   
+   
+   1b. Now once the boot loader is loaded the chip can be programmed like we do with the FTDI for Promini. 
+   
+   
+2. The chip can be programmed with another programmer like AVR ISP or other programmer and using Arduino IDE. 
+
+   https://www.arduino.cc/en/Hacking/Programmer
+   https://www.allaboutcircuits.com/projects/breadboarding-and-programming-the-atmega328p-and-attiny45-in-atmel-studio-7/
+   Or look at the USBAsp pdf available on Robu.in [ Also in the drive ]
+
+3. Loading of boot loader is optional but in that case the chip works with default fuses if not programmed. 
+   Like by default the chip will not take the clock from the external osc and will work with 8MHz div 8 = 1MHz 
+      
+   https://www.avrfreaks.net/forum/do-i-need-bootloader-use-my-atmega-328p 
+   
+   So in case of skipping the boot loader we need to take care of loading the required fuses ourselves. 
+
+
+
