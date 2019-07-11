@@ -22,12 +22,52 @@ Programming the ATMEGA chips
    https://www.allaboutcircuits.com/projects/breadboarding-and-programming-the-atmega328p-and-attiny45-in-atmel-studio-7/
    Or look at the USBAsp pdf available on Robu.in [ Also in the drive ]
 
+   2a. Programming using USBasp : 
+   	-> On windows 8 : 
+		Downloaded the Zadig-2.4 , Avrdude [ https://sourceforge.net/projects/winavr ]
+		Run Zading , Go to options and select "List all devices" 
+		Select the USBasp from the drop down menu
+		Select the driver to upload as libusbK(v3.0.7.0) [ Using other drivers it was not possible to program ]
+		Push Replaece [ install  ] driver. 
+		USBasp will be seen in the "Control Manager" 
+   	-> Could program the arduino nano using the USBasp , 10 pin to 6 pin converter , Arduino IDE. 
+	-> In Arduino IDE select Toools -> Programmer -> USBasp
+	-> Select Tools -> Board -> <board to program > 
+	-> Select Tools -> Burn Bootloader 
+	OR 
+	-> To laod any other sketch 
+	-> Select Sketch -> Upload using programmer [ Not just upload ]
+
+
+	OBSERVATION : Once we upload any sketch using ICSP method the boot loader is erased
+	So in order to using the Arduino IDE to load another sketch with the USB port / serial - need to have boot loader on it. 
+
 3. Loading of boot loader is optional but in that case the chip works with default fuses if not programmed. 
    Like by default the chip will not take the clock from the external osc and will work with 8MHz div 8 = 1MHz 
       
    https://www.avrfreaks.net/forum/do-i-need-bootloader-use-my-atmega-328p 
    
    So in case of skipping the boot loader we need to take care of loading the required fuses ourselves. 
+
+ 
+
+
+4. Breadboarded Atmega328p programming :  [Windows ]
+
+	1. Without any extenal components like 16MHz crystal, 22pf cap , 10K pull up etc. 
+
+	Refer : https://www.arduino.cc/en/Tutorial/ArduinoToBreadboard 
+	        At the end there is a section related to "Minimal Circuit (Eliminateing external clock )
+		
+		1a. Download the hardware config file to have "Atmega328 on a breadboard ( 8MHz internal clock )"
+		1b. Then in the arduino IDE select Tools -> Boards -> Atmega328 on a breadboard ( 8MHz internal clock )
+		1c. Using the USBasp programmer , burn boot loader
+		1d. Now remove the power and gnd for the USBasp. 
+		1e. Connect power and ground for the FTDI programer. 
+		1f. Select the corrrect port. 
+		1f. Now download the required code using the same board and using the noraml "upload" [ Not "upload with programmer"]
+	
+	2. With 16MHz crystal as in the real board. 
 
 
 
