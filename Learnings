@@ -65,9 +65,19 @@ Programming the ATMEGA chips
 		1d. Now remove the power and gnd for the USBasp. 
 		1e. Connect power and ground for the FTDI programer. 
 		1f. Select the corrrect port. 
-		1f. Now download the required code using the same board and using the noraml "upload" [ Not "upload with programmer"]
+		1g. Now download the required code using the same board and using the noraml "upload" [ Not "upload with programmer"]
 	
 	2. With 16MHz crystal as in the real board. 
+
+	Refer : https://www.arduino.cc/en/Tutorial/ArduinoToBreadboard 
+		
+		1a. Connect the crystal and 22pf Cap , Reset pullup resistor and bypass cap on DTR [ to progrm with the FTDI ]
+		1b. Select the board from the Tools -> Boards -> <what ever that uses your UC ] Chose nano.:w
+		1c. Using the USBasp programmer , burn boot loader
+		1d. Now remove the power and gnd for the USBasp. 
+		1e. Connect power and ground for the FTDI programer. 
+		1f. Select the corrrect port. 
+		1g. Now download the required code using the same board and using the noraml "upload" [ Not "upload with programmer"]
 
 
 
