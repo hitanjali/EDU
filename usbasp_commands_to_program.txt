@@ -1,0 +1,30 @@
+avrdude -b 19200 -c usbasp -p m328p -v -e -U efuse:w:0x05:m -U hfuse:w:0xD6:m -U lfuse:w:0xFF:m
+
+avrdude -b 19200 -c usbasp -p m328p -v -e -U flash:w:hexfilename.hex -U lock:w:0x0F:m
+
+-------------------------------------------------------------------------------------------------
+As in boards.txt
+UNO :
+avrdude -b 19200 -c usbasp -p m328p -v -e -U efuse:w:0xFD:m -U hfuse:w:0xDE:m -U lfuse:w:0xFF:m
+
+NANO:
+avrdude -b 19200 -c usbasp -p m328p -v -e -U efuse:w:0xFD:m -U hfuse:w:0xDA:m -U lfuse:w:0xFF:m
+------------------------------------------------------------------------------------------------
+As we think : Only change in the high fuse we did is not to erase the eeprom on chip erase
+UNO :
+avrdude -b 19200 -c usbasp -p m328p -v -e -U efuse:w:0x05:m -U hfuse:w:0xD6:m -U lfuse:w:0xFF:m
+
+
+avrdude -b 19200 -c usbasp -p m328p -v -e -U flash:w:Blink.ino.eightanaloginputs.hex -U lock:w:0x0F:m
+
+
+NANO :
+avrdude -b 19200 -c usbasp -p m328p -v -e -U efuse:w:0x05:m -U hfuse:w:0xD2:m -U lfuse:w:0xFF:m
+
+avrdude -b 19200 -c usbasp -p m328p -v -e -U flash:w:Button.ino.eightanaloginputs.hex -U lock:w:0x0F:m
+
+
+Blink.ino.eightanaloginputs
+Blink.ino.with_bootloader.eightanaloginputs
+
+Button.ino.eightanaloginputs
