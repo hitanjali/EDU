@@ -5,7 +5,9 @@ can route the VCC , GND first followed by critical pins like analog , differenti
 https://resources.altium.com/pcb-design-blog/top-pcb-design-guidelines-every-pcb-designer-needs-to-know
 
 
+========================================================================================================================
 Programming the ATMEGA chips 
+========================================================================================================================
 
 1. The chips can be programmed with the help of another arduino board like UNO in the ISP mode. 
    1a. Load the boot loader with the help of ICSP header and another UNO board. 
@@ -52,7 +54,7 @@ Programming the ATMEGA chips
  
 
 
-4. Breadboarded Atmega328p programming :  [Windows ]
+4. Breadboarded Atmega328p programming :  [Windows with IDE ]
 
 	1. Without any extenal components like 16MHz crystal, 22pf cap , 10K pull up etc. 
 
@@ -72,7 +74,7 @@ Programming the ATMEGA chips
 	Refer : https://www.arduino.cc/en/Tutorial/ArduinoToBreadboard 
 		
 		1a. Connect the crystal and 22pf Cap , Reset pullup resistor and bypass cap on DTR [ to progrm with the FTDI ]
-		1b. Select the board from the Tools -> Boards -> <what ever that uses your UC ] Chose nano.:w
+		1b. Select the board from the Tools -> Boards -> <what ever that uses your UC ] Chose nano.
 		1c. Using the USBasp programmer , burn boot loader
 		1d. Now remove the power and gnd for the USBasp. 
 		1e. Connect power and ground for the FTDI programer. 
@@ -80,4 +82,49 @@ Programming the ATMEGA chips
 		1g. Now download the required code using the same board and using the noraml "upload" [ Not "upload with programmer"]
 
 
+5.Breadboarded Atmega328p programming :  [ Windows with avrdude command line ]
 
+	1. With 16MHz crystal as in the real board [ with command line and commands ]. 
+
+	Refer : https://learn.sparkfun.com/tutorials/installing-an-arduino-bootloader/all#resources-and-going-further
+		Refer the section at the bottom side : Uploding code the hardway
+
+		1a. Open the cmd prompt in windows 
+
+		1b. Use the command file at git hub : 
+			https://github.com/hitanjali/EDU/blob/master/usbasp_commands_to_program.txt
+		1c. Program the fuse : Please ensure the processor document to confirm which fuses needs to program
+			avrdude -b 19200 -c usbasp -p m328p -v -e -U efuse:w:0x05:m -U hfuse:w:0xD2:m -U lfuse:w:0xFF:m
+
+		1d. Generate the hex file from the Arduino IDE :  Sketch -> Export Compiled Library
+		    The hex file would be generated in the same folder as the code. 
+
+		1e. For running the avrdude command to upload the hex file, we should be in the same directory as the hex file is. 
+	
+		1f. Program the hex file : 
+
+			avrdude -b 19200 -c usbasp -p m328p -v -e -U flash:w:<hexfilename>.hex -U lock:w:0x0F:m
+			avrdude -b 19200 -c usbasp -p m328p -v -e -U flash:w:Button.ino.eightanaloginputs.hex -U lock:w:0x0F:m
+
+
+	
+6. Breadboarded Atmega328p programming : [ Ubuntu with avrdude command line ]
+
+	1. With 16MHz crystal as in the real board : Same as in windows 
+
+
+
+========================================================================================================================
+CONCLUSION : 
+========================================================================================================================
+
+If we have ISP programmer and we do not need to bootload the controller : 
+We can just load the fuese and the program to the UC. 
+We just need an ICSP programmer on the board.
+
+Once there is no bootload we can not use serial programming 
+
+We have used USBasp. 
+We may even use the Arduino UNO board as ISP programmer. [ Need to verify ]
+
+========================================================================================================================

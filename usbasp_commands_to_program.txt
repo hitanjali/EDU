@@ -28,3 +28,12 @@ Blink.ino.eightanaloginputs
 Blink.ino.with_bootloader.eightanaloginputs
 
 Button.ino.eightanaloginputs
+
+
+
+avrdude -b 19200 -c usbasp -p m328p
+avrdude -b 19200 -c usbasp -p m328p -v -e -U efuse:w:0xFF:m -U hfuse:w:0xD2:m -U lfuse:w:0xFF:m
+avrdude -b 19200 -c usbasp -p m328p -v -e -U flash:w:Blink_A2.ino.eightanaloginputs.hex -U lock:w:0x0F:m
+avrdude -b 19200 -c usbasp -p m328p
+avrdude -b 19200 -c usbasp -p m328p -v -e -U efuse:w:0xFF:m -U hfuse:w:0xD2:m -U lfuse:w:0xFF:m
+avrdude -b 19200 -c usbasp -p m328p -v -e -U flash:w:motbox_v1_7_6.ino.eightanaloginputs.hex -U lock:w:0x0F:m
